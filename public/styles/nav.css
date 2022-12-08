@@ -1,0 +1,15 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  width: 100%;
+  background: #4056a1;
+  color: #FFFFFF;
+}
+
+nav span  {
+  font-family: "Bungee", sans-serif;
+  padding-right: 1.5em;
+  padding-left: 1.5em;
+}
