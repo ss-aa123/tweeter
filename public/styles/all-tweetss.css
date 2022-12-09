@@ -1,5 +1,5 @@
 /* styling for the whole tweet box*/
-#all-tweets {
+#tweets-container {
   margin-top: 3em;
   margin-bottom: 5em;
   display: flex;
@@ -15,6 +15,7 @@
   border: 5px solid #45433c;
   padding: 1em;
   padding-top: 0.2em;
+  margin-bottom: 10px;
 }
 .tweet:hover {
   box-shadow: 10px 10px #ac9bba;
@@ -29,6 +30,7 @@
   height: 2em;
   margin-bottom: 30px;
   background-color: #f4f1ec;
+  padding-top: 20px;
 }
 
 .icon-and-name {
@@ -44,7 +46,7 @@
   max-height: 50px;
 }
 
-.userHandle {
+.handle {
   opacity: .6;
 }
 

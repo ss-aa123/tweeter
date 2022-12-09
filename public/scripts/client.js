@@ -4,7 +4,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweets = [
+$(document).ready(function() {
+
+const data = [
   {
     "user": {
       "name": "Newton",
@@ -27,18 +29,15 @@ const tweets = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
 const renderTweets = function(tweets) {
-// loops through tweets
-// calls createTweetElement for each tweet
-// takes return value and appends it to the tweets container
-
-  $('#all-tweets').empty();
-  for (let tweet of tweets) {
-    $('#all-tweets').append.createTweetElement(tweet)
-  }
-}
+    $('#tweets-container').empty();
+    for (let tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $('#tweets-container').append($tweet);  
+    }
+  };
 
 const createTweetElement = function(tweet) {
   let $tweet = $(`
@@ -61,11 +60,14 @@ const createTweetElement = function(tweet) {
             <i class="fa-sharp fa-solid fa-heart"></i>
           </div>
         </footer>
-      </article>`
-      );
+      </article>
+      `);
 
   return $tweet;
 };
 
+
+
 renderTweets(data);
+});
 
