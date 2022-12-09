@@ -1,0 +1,71 @@
+/* styling for the whole tweet box*/
+#all-tweets {
+  margin-top: 3em;
+  margin-bottom: 5em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+}
+
+.tweet {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #45433c;
+  padding: 1em;
+  padding-top: 0.2em;
+}
+.tweet:hover {
+  box-shadow: 10px 10px #ac9bba;
+}
+
+/* styling for the top elements in tweet*/
+.tweet header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 2em;
+  margin-bottom: 30px;
+  background-color: #f4f1ec;
+}
+
+.icon-and-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon-and-name img {
+  margin-left: 10px;
+  margin-right: 10px;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.userHandle {
+  opacity: .6;
+}
+
+/* styling for the bottom elements in tweet*/
+article.tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 5px solid #45433c;
+  font-size: .7em;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.icons i {
+  padding: 10px;
+  padding-top: 0px;
+  color: #3e2b92
+}
+.icons i:hover {
+  color: #d2c57c
+}
+
