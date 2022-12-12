@@ -31,12 +31,18 @@ const data = [
   }
 ];
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const renderTweets = function(tweets) {
     $('#tweets-container').empty();
-    for (let tweet of tweets) {
+    tweets.forEach(function(tweet) {
       const $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);  
-    }
+      $('#tweets-container').prepend($tweet);  
+    })
   };
 
 const createTweetElement = function(tweet) {
@@ -44,16 +50,16 @@ const createTweetElement = function(tweet) {
     <article class="tweet">
         <header>
           <div class="icon-and-name">
-            <img src="${tweet.user.avatars}"></img> 
-            <h4 class="userName">${tweet.user.name}</h4>
+            <img src="${escape(tweet.user.avatars)}"></img> 
+            <h4 class="userName">${escape(tweet.user.name)}</h4>
           </div>
           <div class="handle">
-            <h4>${tweet.user.handle}</h4>
+            <h4>${escape(tweet.user.handle)}</h4>
           </div>
         </header>
-        <p>${tweet.content.text}</p>
+        <p>${escape(tweet.content.text)}</p>
         <footer>
-          <span>${timeago.format(tweet.created_at)}</span>
+          <span>${escape(timeago.format(tweet.created_at))}</span>
           <div class="icons">
             <i class="fa-solid fa-flag"></i>              
             <i class="fa-solid fa-retweet"></i>
@@ -67,7 +73,46 @@ const createTweetElement = function(tweet) {
 };
 
 
+const loadTweets = function() {
+  $.get("/tweets/")
+    .then(data => {
+      renderTweets(data);
+    });
+};
 
-renderTweets(data);
+loadTweets();
+
+
+//$(".submittweet").validate(); //to automatically displya errors
+$(".submittweet").on("submit", function(e) {
+  e.preventDefault();
+  
+  if ($('#tweet-text').val().length > 140) {
+    alert('Your message is too long!');
+    return false;
+  }
+  if ($('#tweet-text').val().length <= 0) {
+    alert('Enter a message before submitting!');
+    return false;
+  }
+
+  let data = $(this).serialize();
+
+  $.ajax('/tweets', {
+    type: "POST",
+    data: data,
+    success: function() {
+      $("textarea").val("");
+      $(".counter").html(140);
+      loadTweets();
+    }
+  });
+
 });
+
+
+});
+
+
+
 

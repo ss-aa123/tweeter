@@ -1,7 +1,8 @@
 $(document).ready(function() {
+  
   $("#tweet-text").on("input", function () {
-    const inputValueLength = $(this).val().length;
-    let remainingValues = 140 - inputValueLength;
+    const len = $(this).val().length;
+    let remainingValues = 140 - len;
     
     let counter = $(this).parent().children().find(".counter");
     counter.text(remainingValues);
