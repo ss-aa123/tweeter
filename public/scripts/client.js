@@ -7,8 +7,6 @@
 $(document).ready(function() {
   $('#error').slideUp('fast');
 
-
-
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
