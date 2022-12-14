@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-  $("#tweet-text").on("input", function () {
+  $("#tweet-text").on("input", function() {
     const len = $(this).val().length;
     let remainingValues = 140 - len;
     

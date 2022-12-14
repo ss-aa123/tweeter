@@ -5,6 +5,13 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-bottom: 3em;
   background-color: #cb934f;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+header h2 {
+  color: white;
 }
