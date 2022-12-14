@@ -16,3 +16,10 @@ It's functional, aesthetically pleasing, and fun to use.
 - Node 5.10.x or above
 - Body-parser
 - Chance
+
+## Screenshots
+
+!["Screenshot of mobile page display"](https://github.com/ss-aa123/tweeter/blob/master/docs/mobile_display.png?raw=true)
+!["Screenshot of desktop or tablet page display"](https://github.com/ss-aa123/tweeter/blob/master/docs/desktop_display.png?raw=true)
+!["Screenshot of tweets"](https://github.com/ss-aa123/tweeter/blob/master/docs/tweet_box.png?raw=true)
+!["Screenshot of tweet compose box"](https://github.com/ss-aa123/tweeter/blob/master/docs/tweet-compose-box.png?raw=true)
